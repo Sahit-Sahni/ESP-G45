@@ -1,6 +1,6 @@
 #include "mbed.h"
 
-class Motor
+class Motor                                     //Begin Motor class definition
 {
     protected:
     PwmOut outputPWM;
@@ -36,10 +36,10 @@ class Motor
 int main() {
     DigitalOut enable (PC_3);
     enable.write(1);
-    Motor leftmotor(PB_7, PA_13, PA_14); //change PH0 and PH1
-    Motor rightmotor(PA_15, PC_10, PC_12); ///change PC_14 and PC_15
-    //leftmotor.bipolarMode();
-    //rightmotor.bipolarMode();
+    Motor leftmotor(PB_7, PA_13, PA_14); 
+    Motor rightmotor(PA_15, PC_10, PC_12); 
+    leftmotor.bipolarMode(0.5f);
+    rightmotor.bipolarMode(0.5f);
 
   while(1) {
   }
